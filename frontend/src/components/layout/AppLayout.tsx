@@ -13,6 +13,8 @@ import {
 import { useQCStore } from '@/stores/qc-store';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
+import { motion } from 'framer-motion';
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -29,7 +31,11 @@ export function AppLayout({ children }: AppLayoutProps) {
   const { sidebarOpen, toggleSidebar, filters, setFilter } = useQCStore();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
+      {/* Animated background */}
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_50%_-20%,hsl(var(--primary)/0.15),transparent),radial-gradient(800px_400px_at_10%_20%,hsl(var(--accent)/0.12),transparent),radial-gradient(800px_400px_at_90%_80%,hsl(var(--chart-3)/0.12),transparent)]" />
+      </div>
       {/* Sidebar */}
       <aside 
         className={cn(
@@ -89,7 +95,7 @@ export function AppLayout({ children }: AppLayoutProps) {
         sidebarOpen ? "ml-56" : "ml-14"
       )}>
         {/* Header */}
-        <header className="sticky top-0 z-30 h-14 border-b border-border bg-surface/80 backdrop-blur-sm">
+        <header className="sticky top-0 z-30 h-14 border-b border-border bg-surface/70 backdrop-blur-xl">
           <div className="flex h-full items-center justify-between px-6">
             <div className="flex items-center gap-4 flex-1">
               <div className="relative w-full max-w-sm">
@@ -104,6 +110,7 @@ export function AppLayout({ children }: AppLayoutProps) {
             </div>
             
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <Button variant="ghost" size="icon" className="relative h-9 w-9">
                 <Bell className="h-4 w-4" />
                 <span className="absolute -top-0.5 -right-0.5 h-4 w-4 rounded-full bg-destructive text-[10px] font-medium text-destructive-foreground flex items-center justify-center">
@@ -119,7 +126,9 @@ export function AppLayout({ children }: AppLayoutProps) {
 
         {/* Page content */}
         <main className="p-6">
-          {children}
+          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: 'easeOut' }}>
+            {children}
+          </motion.div>
         </main>
       </div>
     </div>

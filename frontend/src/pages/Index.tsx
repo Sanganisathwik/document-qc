@@ -6,6 +6,7 @@ import { mockDocuments } from '@/lib/mock-data';
 import { Button } from '@/components/ui/button';
 import { Download, RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   const unresolvedCount = mockDocuments.filter(d => d.status !== 'resolved').length;
@@ -20,7 +21,7 @@ const Index = () => {
 
   return (
     <AppLayout>
-      <div className="space-y-6 animate-fade-in">
+      <motion.div className="space-y-6" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
         {/* Page header */}
         <div className="flex items-center justify-between">
           <div>
@@ -49,7 +50,7 @@ const Index = () => {
 
         {/* Bulk actions */}
         <BulkActions />
-      </div>
+      </motion.div>
     </AppLayout>
   );
 };
