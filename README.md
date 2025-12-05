@@ -107,15 +107,14 @@ Build the project from the source and install its dependencies:
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone https://github.com/Sanganisathwik/document-qc
     ```
 
-    *[Replace with your actual repository URL]*
 
 2.  **Navigate to the project directory:**
 
     ```bash
-    cd your-repo-name
+    cd document-qc
     ```
 
    
