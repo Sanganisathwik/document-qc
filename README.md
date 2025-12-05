@@ -164,4 +164,3 @@ This project is leveraged by the following powerful tools and technologies:
   * [date-fns](https://date-fns.org/) - Modern JavaScript date utility library.
   * [React Hook Form](https://react-hook-form.com/) - Performant, flexible, and extensible forms with easy-to-use validation.
 
-[Add other relevant technologies like PostCSS, Autoprefixer, etc., as seen in the badges]
