@@ -5,9 +5,6 @@
 *Ensure Document Quality, Accelerate Your Success*
 
 <p align="center">
-  <a href="https://github.com/Sanganisathwik/document-qc/commits/main">
-    <img src="https://img.shields.io/github/last-commit/your-username/your-repo-name?style=flat-square&logo=github&label=last%20commit&color=555555" alt="GitHub last commit">
-  </a>
   <a href="https://www.typescriptlang.org/">
     <img src="https://img.shields.io/badge/typescript-96.1%25-blue?style=flat-square&logo=typescript" alt="TypeScript">
   </a>
